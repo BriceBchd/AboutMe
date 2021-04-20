@@ -1562,7 +1562,9 @@ input, select, textarea {
 
 		.image.fit {
 			display: block;
-			width: 100%;
+			width: 470px;
+			height: 320px;
+			
 		}
 
 		.image.left {
@@ -2497,3 +2499,21 @@ input, select, textarea {
 				}
 
 	}
+
+.projects {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+.project {
+	display: block;
+	align-items: center;
+	width: 500px;
+	padding: 15px;
+	margin: 5px;
+}
