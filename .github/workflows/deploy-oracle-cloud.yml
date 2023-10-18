@@ -16,7 +16,6 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
         mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY"
         echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan -H 129.151.253.205 >> ~/.ssh/known_hosts
@@ -24,3 +23,7 @@ jobs:
     - name: Deploy Files
       run: |
         ssh -i  ~/.ssh/id_rsa opc@129.151.253.205 'cd /home/opc/AboutMe && git pull'
+
+    - name: Copy to Nginx path
+      run : |
+        ssh -i  ~/.ssh/id_rsa opc@129.151.253.205 'cd /home/opc/AboutMe && cp -r /home/opc/AboutMe/ /var/www/html/'
