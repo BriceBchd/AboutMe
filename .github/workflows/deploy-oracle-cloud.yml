@@ -26,4 +26,4 @@ jobs:
 
     - name: Copy to Nginx path
       run : |
-        ssh -i  ~/.ssh/id_rsa opc@129.151.253.205 'cd /home/opc/AboutMe && cp -r /home/opc/AboutMe/ /var/www/html/'
+        ssh -i  ~/.ssh/id_rsa opc@129.151.253.205 'cd /home/opc/AboutMe && sudo cp -r /home/opc/AboutMe/* /var/www/html/'
